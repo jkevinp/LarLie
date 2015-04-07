@@ -1,0 +1,41 @@
+
+<html>
+<head>
+<title>Norse</title>
+</head>
+
+		<a href="#bottom">proceed to bottom</a>
+	
+		<a name="top"></a>
+	
+	<body background="norseproject.jpg">
+	
+	</br></br></br></br>
+	
+	<h1>
+			<font  face="harrington"  color="red"><p align="center"><i>"In the middle of 18th century the story of a young 
+				little prince started in a castle that is located in a forest."</i></font>
+	
+	</br></br></br></br></br></br>
+		<marquee><img src="warhammer.jpg" alt="text" title="castle" height="300" width="500"></marquee>
+	
+	</br></br></br></br></br></br>
+		<marquee><img src="myths.jpg" alt="text" title="castle" height="300" width="500"></marquee>
+	
+	</br></br></br></br></br></br>
+		<marquee><img src="odin.jpg" alt="text" title="castle" height="300" width="500"></marquee>
+	
+	</br></br></br></br></br></br>
+	
+	</h1>
+	
+	<h1>
+				<font  face="harrington"  color="navy"><p align="center"><a href="7webpages.html">Go back to Summary page!.</a></p></font></h1>
+	
+		<a href="#top">proceed to top</a>
+	
+		<a name="bottom"></a>
+	
+	</body>
+	</html>
+	

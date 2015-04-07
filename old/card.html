@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>card</title>
+</head>
+<body>
+
+<?php
+define('PAGETITLE', 'Lab 2 – Creating Basic PHP Script');
+include_once('config.php');
+include_once('header.php');
+?>
+<div id="Content">
+
+<body background="background.jpg">
+
+<?php
+include_once('navigation.php');
+?>
+<center>
+<h1 class="title"><center><font color="fuchsia">Lab 4 <span><?php echo PAGETITLE ?></font></center></span></h1>
+<br>
+<?php 
+			$card1 = mt_rand(1,52); //player 1 first card
+			$card2 = mt_rand(1,52); //player 1 second card
+			
+			$card3 = mt_rand(1,52); //player 2 first card
+			$card4 = mt_rand(1,52); //player 2 second card
+			
+			$card5 = mt_rand(1,52); //player 3 first card
+			$card6 = mt_rand(1,52); //player 3 second card
+			
+			$card7 = mt_rand(1,52); //player 4 first card
+			$card8 = mt_rand(1,52); //player 4 second card
+					
+			//playr1 total
+			$total1 = getcardvalue1($card1) + getcardvalue2($card2);
+			if ($total1>9){
+				$total1=$total1 - 10;
+			}
+			//player 2 total
+			$total2 = getcardvalue1($card3) + getcardvalue2($card4);
+			if ($total2>9){
+				$total2=$total2 - 10;
+			}
+			//player 3 total
+			$total3 = getcardvalue1($card5) + getcardvalue2($card6);
+			if ($total3>9){
+				$total3=$total3 - 10;
+			}
+			//player 4 total
+			$total4 = getcardvalue1($card7) + getcardvalue2($card8);
+			if ($total4>9){
+				$total4=$total4 - 10;
+			}
+			//Win or Lose
+			$result1="Loser!!!";
+			$result2="Loser!!!";
+			$result3="Loser!!!";
+			$result4="Loser!!!";
+			
+			if (($total1 >= $total2) && ($total1 >= $total3) && ($total1 >= $total4)) {
+			$result1="Winner!!!";
+			}
+			if (($total2 >= $total1) && ($total2 >= $total3) && ($total2 >= $total4)) {
+			$result2="Winner!!!";
+			}
+			if (($total3 >= $total1) && ($total3 >= $total2) && ($total3 >= $total4)){
+			$result3="Winner!!!";
+			}
+			if (($total4 >= $total1) && ($total4 >= $total2) && ($total4 >= $total3)){
+			$result4="Winner!!!";
+			}
+			//Table
+			echo '<table border="1" cellpadding="15" cellspacing="12" bgcolor="black" align="center">';
+			//players
+			echo '<tr>';
+			echo '<td bgcolor="fuchsia" align="center"><b><font color="lime" size="5">Player 1</font></b></td>';
+			echo '<td bgcolor="fuchsia" align="center"><b><font color="lime" size="5">Player 2</font></b></td>';
+			echo '<td bgcolor="fuchsia" align="center"><b><font color="lime" size="5">Player 3</font></b></td>';
+			echo '<td bgcolor="fuchsia" align="center"><b><font color="lime" size="5">Player 4</font></b></td>';
+			echo '</tr>';
+			//1st cards
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card1, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card3, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card5, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card7, '.png"></td>';
+			echo '</tr>';
+			//2nd cards
+			echo '<tr>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card2, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card4, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card6, '.png"></td>';
+			echo '<td align="center" bgcolor="black"><img src="/csnclass/img/cards/', $card8, '.png"></td>';
+			echo '</tr>';
+			//Totals	
+			echo '<tr>';
+			echo '<td bgcolor="lime" align="center"><b><font color="black" size="4">',$total1,'</font></b></td>';
+			echo '<td bgcolor="lime" align="center"><b><font color="black" size="4">',$total2,'</font></b></td>';
+			echo '<td bgcolor="lime" align="center"><b><font color="black" size="4">',$total3,'</font></b></td>';
+			echo '<td bgcolor="lime" align="center"><b><font color="black" size="4">',$total4,'</font></b></td>';
+			echo '</tr>';
+			//Result(Win or Lose)
+			echo '<tr>';
+			echo '<td bgcolor="fuchsia" align="center"><font size="4" color="lime">',$result1,'</font></td>';
+			echo '<td bgcolor="fuchsia" align="center"><font size="4" color="lime">',$result2,'</font></td>';
+			echo '<td bgcolor="fuchsia" align="center"><font size="4" color="lime">',$result3,'</font></td>';
+			echo '<td bgcolor="fuchsia" align="center"><font size="4" color="lime">',$result4,'</font></td>';	
+			echo '</tr>';
+			//Generate New Set
+			echo '<tr>';
+			echo '<td colspan="4" align="center"bgcolor="fuchsia"><a href="lab4.php"><b><font size="4" color="black">Refresh</font></b></a></td>';
+			echo '</tr>';
+			echo '</table>';
+			//card1 function
+			function getcardvalue1($card1){
+				if ($card1==1){
+					return $card1=1;
+				}
+				elseif ($card1==2){
+					return $card1=2;
+				}
+				elseif ($card1==3){
+					return $card1=3;
+				}
+				elseif ($card1==4){
+					return $card1=4;
+				}
+				elseif ($card1==5){
+					return $card1=5;
+				}
+				elseif ($card1==6){
+					return $card1=6;
+				}
+				elseif ($card1==7){
+					return $card1=7;
+				}
+				elseif ($card1==8){
+					return $card1=8;
+				}
+				elseif ($card1==9){
+					return $card1=9;
+				}
+				elseif ($card1==10){
+					return $card1=0;
+				}
